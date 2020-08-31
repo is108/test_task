@@ -33,7 +33,11 @@ void Menu::printMenu() {
         std::cout << table;
         printCounters();
         //Очистка консоли
+    #ifdef WINDOWS
+        std::system("cls");
+    #else
         std::cout << "\x1B[2J\x1B[H";
+    #endif
         //Засыпание потока
         std::this_thread::sleep_for(std::chrono::milliseconds(50));    
     }
